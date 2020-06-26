@@ -3,22 +3,27 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import('../views/Home.vue')
+    "path": '/',
+    "name": '_home',
+    "redirect": '/home'
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
+    "path": '/home',
+    "name":'home',
+    "component": () => import('../views/Home.vue')
+  },
+  {
+    "path": '/about',
+    "name": 'About',
+    "component": () => import('../views/About.vue')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  // "mode": 'history',
+  "base": process.env.BASE_URL,
   routes
 })
 
