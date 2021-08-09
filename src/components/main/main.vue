@@ -6,13 +6,14 @@
     </div>
     <div class="right">
       <div class="top">
-        <!-- <Breadcrumb>
+        <Breadcrumb>
           <BreadcrumbItem to="/">Home</BreadcrumbItem>
-          <BreadcrumbItem to="/components/breadcrumb">Components</BreadcrumbItem>
+          <BreadcrumbItem to="/components/breadcrumb"
+            >Components</BreadcrumbItem
+          >
           <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
-        </Breadcrumb> -->
-        <Input style="width:200px" />
-        <language />
+        </Breadcrumb>
+        <language></language>
       </div>
       <Tabs type="card" closable @on-tab-remove="handleTabRemove">
         <TabPane label="标签一" v-if="tab0"></TabPane>
@@ -37,61 +38,27 @@ export default {
   components: {
     heads,
     menus,
-    language,
+    language
   },
   computed: {
     ...mapMutations({}),
     local() {
       return this.$store.state.user.local;
-    },
+    }
   },
   data() {
     return {
+      title: "dakhklhkl",
       logoimg,
       tab0: true,
       tab1: true,
-      tab2: true,
+      tab2: true
     };
   },
   methods: {
     handleTabRemove(name) {
       this["tab" + name] = false;
-    },
-  },
+    }
+  }
 };
 </script>
-
-<style lang="less">
-.main {
-  height: 100%;
-  position: relative;
-  .left {
-    position: absolute;
-    width: 240px;
-    height: 100%;
-    overflow: hidden;
-  }
-  .right {
-    position: absolute;
-    left: 240px;
-    height: 100%;
-    width: ~"calc(100% - 240px)";
-    overflow: hidden;
-    background: #fff;
-    .top{
-      
-    }
-    .ivu-tabs-bar {
-      margin: 0;
-    }
-    .main-body {
-      height: ~"calc(100% - 64px)";
-      // padding: 0 16px;
-      // margin: 16px;
-      margin-right: 0;
-      overflow-y: auto;
-      background: #eee;
-    }
-  }
-}
-</style>

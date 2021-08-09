@@ -1,0 +1,32 @@
+.main {
+  height: 100%;
+  position: relative;
+  .left {
+    position: absolute;
+    width: 240px;
+    height: 100%;
+    overflow: hidden;
+    .menus{
+        height: "~calc(100% - 50px)";
+    }
+  }
+  .right {
+    position: absolute;
+    left: 240px;
+    height: 100%;
+    width: ~"calc(100% - 240px)";
+    overflow: hidden;
+    background: #fff;
+    .ivu-tabs-bar {
+      margin: 0;
+    }
+    .main-body {
+      height: ~"calc(100% - 64px)";
+      // padding: 0 16px;
+      margin: 16px;
+      margin-right: 0;
+      overflow-y: auto;
+      background: #eee;
+    }
+  }
+}

@@ -1,12 +1,12 @@
-import { localSave, localRead, } from '@/libs/utils'
+import { localSave, localRead,} from '@/libs/utils'
 const state = {
-  local: localRead('local'),
+    local: localRead('local'),
 }
 const mutations = {
-  SETLOCAL(state, lang) {
-    state.local = lang
-    localSave('local', lang)
-  }
+    SETLOCAL(state, lang){
+        state.local = lang
+        localSave('local', lang)
+    }
 }
 
 const actions = {
@@ -14,7 +14,7 @@ const actions = {
 }
 
 export default {
-  state,
-  mutations,
-  actions,
+    state,
+    mutations,
+    actions,
 }
